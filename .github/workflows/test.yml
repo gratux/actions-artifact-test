@@ -24,7 +24,7 @@ jobs:
               repo: context.repo.repo,
               run_id: context.runId
             });
-            console.log(`No filter: ${response}`);
+            console.log(response);
 
             const response_filtered = await github.rest.actions.listWorkflowRunArtifacts({
               owner: context.repo.owner,
@@ -32,4 +32,4 @@ jobs:
               run_id: context.runId,
               name: "my-cool-artifact"
             });
-            console.log(`No filter: ${response_filtered}`);
+            console.log(response_filtered);
